@@ -1,0 +1,120 @@
+.question-card {
+  width: 100%;
+  max-width: 400px;
+  height : 175px;
+  padding: 5px;
+  display: flex;
+  margin: 10px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  
+}
+
+.question-card-expanded {
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  display: flex;
+  margin: 10px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+}
+
+.option-card{
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  display: flex;
+  margin: 10px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+}
+
+.selected-option-card{
+  width: 100%;
+  max-width: 400px;
+  padding: 5px;
+  display: flex;
+  margin: 10px auto;
+  border: 2px solid #17a2b8 ;
+  border-radius: 3px;
+  background-color: #17a3b860
+}
+
+
+.score-card {
+  width: 100%;
+  max-width: 400px;
+  height : 125px;
+  padding: 5px;
+  display: flex;
+  margin: 15px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+}
+
+.question-list-container{
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 15px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  background: #ffffff;
+}
+
+.new-question-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 5px;
+  display: flex;
+  margin: 15px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+}
+
+.badge{
+  position :absolute;
+  right : -15px;
+  top:-15px;
+  background: #fdc007;
+  border-radius: 50%;
+  width:35px;height:35px;
+  color: white;
+  text-align: center;
+  line-height: 10px;
+  padding: 7px 5px;
+  font-size:0.6em;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+.nav div {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.logged-in{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  padding-left:100px;
+}
+
+.selected-list{
+  font-weight : bold;  
+}
+
+.nothing{
+  color:white;
+}
