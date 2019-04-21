@@ -10,6 +10,18 @@
   
 }
 
+.error-card {
+  width: 100%;
+  max-width: 250px;
+  padding: 5px;
+  display: flex;
+  margin: 10px auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  background : white;
+  font-weight : bold;
+}
+
 .question-card-expanded {
   width: 100%;
   max-width: 400px;

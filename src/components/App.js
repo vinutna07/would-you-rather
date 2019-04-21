@@ -9,7 +9,8 @@ import NewQuestionForm from './NewQuestionForm'
 import ScoreCardList from './ScoreCardList'
 import LoadingBar from 'react-redux-loading'
 import Nav from './Nav'
-import LoginForm from './LoginForm';
+import LoginForm from './LoginForm'
+import ErrorPage from './ErrorPage'
 
 class App extends Component {
 
@@ -33,6 +34,7 @@ class App extends Component {
                   <Route path='/questions/:id' component={QuestionCardExpanded} />
                   <Route path='/add' component={NewQuestionForm} />
                   <Route path='/leaderboard' component={ScoreCardList} />
+                  <Route component={ErrorPage}/>
                 </Switch>
               </div>}
           </div>

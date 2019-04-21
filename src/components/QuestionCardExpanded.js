@@ -9,22 +9,25 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import { handleAnswerQuestion } from '../actions/questions'
+import ErrorPage from './ErrorPage'
 
 class QuestionCardExpanded extends Component {
     constructor(props) {
         super(props)
         this.state = {
             showResult: false,
-            userChoice: ''
+            userChoice: '',
         }
     }
 
     componentDidMount() {
         const { authedUser, question } = this.props
-        if (question.optionOne.votes.includes(authedUser)) {
-            this.setState({ showResult: true, userChoice: 'optionOne' })
-        } else if (question.optionTwo.votes.includes(authedUser)) {
-            this.setState({ showResult: true, userChoice: 'optionTwo' })
+        if (question !== null) {
+            if (question.optionOne.votes.includes(authedUser)) {
+                this.setState({ showResult: true, userChoice: 'optionOne' })
+            } else if (question.optionTwo.votes.includes(authedUser)) {
+                this.setState({ showResult: true, userChoice: 'optionTwo' })
+            }
         }
     }
 
@@ -48,10 +51,8 @@ class QuestionCardExpanded extends Component {
     }
 
     render() {
-        const { question, user } = this.props
-        if (question === null) {
-            return <p>This Question doesn't exist</p>
-        }
+        const { question, user, error } = this.props
+        if(error){ return <ErrorPage/> }
         const totalVotes = question.optionOne.votes.length + question.optionTwo.votes.length
         const optionOneVotes = question.optionOne.votes.length
         const optionTwoVotes = question.optionTwo.votes.length
@@ -132,10 +133,12 @@ function mapStateToProps({ authedUser, users, questions }, props) {
     const { id } = props.match.params
     let question = questions[id]
     let user = question ? users[question.author] : null
+    let error = question ? false : true
     return {
         authedUser,
         question: question ? question : null,
-        user
+        user,
+        error
     }
 }
 
